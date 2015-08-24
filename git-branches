@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+branches="$(git for-each-ref --format='%(refname)' refs/heads)" || exit
+branches="${branches//refs\/heads\/}"
+echo "$branches"

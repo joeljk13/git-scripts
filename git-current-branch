@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+branch="$(git symbolic-ref -q HEAD)" || exit
+branch="${branch#refs/heads/}"
+echo "$branch"

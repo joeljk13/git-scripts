@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [ $# -lt 2 ]; then
+    echo "usage: git are-no-conflicts <branch1> <branch2> [<branch3> ...]" >&2
+    exit 1
+fi
+
+. ~/.git-scripts/git-ref >/dev/null || exit
+
+git checkout --quiet "$1" || exit
+shift
+git merge --no-commit --no-ff --quiet "$@" >/dev/null
+err=$?
+git reset --merge
+git checkout --quiet "$ref"
+exit $err

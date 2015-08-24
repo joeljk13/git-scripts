@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+f()
+{
+    ref="$(git symbolic-ref -q HEAD)"
+    local err=$?
+    [ $err = 128 ] && exit $err
+    if [ $err = 0 ]; then
+        ref="${ref#refs/heads/}"
+    else
+        ref="$(git rev-parse $1 HEAD)"
+    fi
+    echo "$ref"
+}
+
+f $1
