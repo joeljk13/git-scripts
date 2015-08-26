@@ -5,6 +5,10 @@
     || exit
 
 git fetch --all
+for remote in $(git remote); do
+    git remote prune "$remote"
+done
+git fetch --all
 
 for branch in $branches; do
     git checkout "$branch"
