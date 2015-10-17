@@ -17,6 +17,7 @@ git-branches
 
 Lists all local branches in the repository. Designed for scripting, so you can
 do something like
+
     for branch in $(git branches); do
         # Do something with $branch
     done
@@ -42,6 +43,7 @@ git-ref
 A useful scripting tool for figuring out where HEAD is - it prints a
 symbolic ref name if it can, and the SHA1 hash if it can't. This too is
 designed for scripting, so you can do this:
+
     ref=$(git ref)
     # ...
     # Do whatever checkouts you want
