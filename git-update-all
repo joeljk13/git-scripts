@@ -4,11 +4,11 @@
     && . ~/.git-scripts/git-branches >/dev/null \
     || exit
 
-git fetch --all --progress
+git fetch --all
 for remote in $(git remote); do
     git remote prune "$remote"
 done
-git fetch --all --progress
+git fetch --all
 
 for branch in $branches; do
     git checkout "$branch"
