@@ -2,7 +2,7 @@ git scripts
 ===========
 
 A bunch of scripts designed for both interactive and script use. They assume
-they're in ~/.git-scripts.
+they're in ~/.git-scripts, so ~/.git-scripts should be in your PATH.
 
 git-are-no-conflicts
 --------------------
